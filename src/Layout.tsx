@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './asset/styles/layout.scss';
-
 import Logo from './asset/image/hd-logo.png';
 import Twitter from './asset/image/hd-twitter.png';
 
@@ -30,13 +28,13 @@ const Layout = ({ children }: Props) => {
               </li>
             </ul>
           </menu>
-          <div>
-            <button>
+          <div className="logo">
+            <a href={'/'}>
               <img src={Twitter} alt="Twitter" />
-            </button>
-            <button>
+            </a>
+            <a href={'/'}>
               <img src={Logo} alt="Logo" />
-            </button>
+            </a>
           </div>
         </div>
       </header>

@@ -1,13 +1,15 @@
 import React from 'react';
 
-const GiggleNFTs = [''];
+import Vector from '../asset/image/vector.png';
+
+const GiggleNFTs = [Vector];
 
 const Home = () => {
   return (
     <div className="container">
       <div className="banner">
         <div>
-          <img src="" alt="" />
+          <img src={Vector} alt="" />
         </div>
         <div className="content">
           <h1>Stay Hungry, Stay Foolish</h1>
