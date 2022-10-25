@@ -1,0 +1,28 @@
+header {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    > li {
+        display: inline-block;
+
+        a {
+            font-family: Alumni;
+            font-size: 2.3em;
+            font-style: italic;
+            letter-spacing: 0.05em;
+        }
+    }
+}
