@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './asset/styles/layout.scss';
+
 import Logo from './asset/image/hd-logo.png';
 import Twitter from './asset/image/hd-twitter.png';
 
@@ -12,6 +14,10 @@ const Layout = ({ children }: Props) => {
     <>
       <header>
         <div className="header">
+          <input type="checkbox" id="openable" />
+          <label className="hamburger" htmlFor="openable">
+            <span></span>
+          </label>
           <menu>
             <ul className="menu">
               <li>
@@ -27,15 +33,15 @@ const Layout = ({ children }: Props) => {
                 <a href={'/'}>Q&A</a>
               </li>
             </ul>
+            <div className="logo">
+              <a href={'/'}>
+                <img src={Twitter} alt="Twitter" />
+              </a>
+              <a href={'/'}>
+                <img src={Logo} alt="Logo" />
+              </a>
+            </div>
           </menu>
-          <div className="logo">
-            <a href={'/'}>
-              <img src={Twitter} alt="Twitter" />
-            </a>
-            <a href={'/'}>
-              <img src={Logo} alt="Logo" />
-            </a>
-          </div>
         </div>
       </header>
       <main>{children}</main>

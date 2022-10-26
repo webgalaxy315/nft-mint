@@ -1,19 +1,71 @@
-header {
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-bottom: 35px;
-}
+$header-height: 100px;
 
-footer {
-    padding-left: 50px;
-    padding-right: 50px;
+$container-x-padding: 50px;
+
+header {
+    
+    @media (max-width: 1024px) {
+        position: absolute;
+        z-index: 9999;
+    }
 }
 
 .header {
+    min-height: $header-height;
+    // padding-bottom: 30px;
+    padding-left: $container-x-padding;
+    padding-right: $container-x-padding;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        background: #555D;
+        width: 100vw;
+        min-height: 100vh;
+    }
+
+    input#openable {
+        width: 0;
+        height: 0;
+        padding: 0;
+        margin: 0;
+
+        &:checked {
+            & ~ main {
+                display: flex;
+            }
+
+            & ~ .hamburger {
+                span {
+                    opacity: 0;
+                }
+
+                &:before {
+                    transform: translate3d(0px, 12.5px, 0) rotate(225deg);
+                }
+
+                &:after {
+                    transform: translate3d(-0px, -12.5px, 0) rotate(-225deg);
+                }
+            }
+        }
+    }
+}
+
+menu {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 80px;
+
+    @media (max-width: 1024px) {
+        top: -23px;
+        left: -50px;
+        right: -50px;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 20px;
+        width: 100%;
+    }
 }
 
 .menu {
@@ -21,12 +73,19 @@ footer {
     align-items: center;
     gap: 40px;
 
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 50px;
+        margin-bottom: 50px;
+    }
+
     > li {
         display: inline-block;
 
         a {
             font-family: Alumni;
-            font-size: 3.5em;
+            font-size: 2.9em;
             font-style: italic;
             color: #000000;
             letter-spacing: 0.05em;
@@ -39,11 +98,58 @@ footer {
     align-items: center;
     gap: 40px;
 
+    @media (max-width: 1024px) {
+        // display: none;
+    }
+
     > a {
-        display:  inline-block;
 
         > img {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
         }
     }
+}
+
+.hamburger {
+    position: absolute;
+    top: 42px;
+    right: 30px;
+    display: none;
+    width: 30px;
+    height: 25px;
+    z-index: 10;
+
+    @media (max-width: 1024px) {
+        display: block;
+    }
+
+    &:before, span, &:after {
+        position: absolute;
+        left: 0;
+        transform: translate(0, -50%);
+        width: 100%;
+        height: 2px;
+        background: #333;
+        transition: all 0.4s ease-in-out;
+        content: "";
+    }
+
+    &:before {
+        top: 0%;
+    }
+
+    span {
+        top: 50%;
+    }
+
+    &:after {
+        top: 100%;
+    }
+}
+
+footer {
+    padding-left: 50px;
+    padding-right: 50px;
 }

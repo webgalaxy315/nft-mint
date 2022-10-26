@@ -1,42 +1,51 @@
 import React from 'react';
 
-import Vector from '../asset/image/vector.png';
+import '../asset/styles/pages/home.scss';
 
-const GiggleNFTs = [Vector];
+import BannerBackground from '../asset/image/ban-chicken.png';
+import IntLeft1 from '../asset/image/int-left-1.png';
+import IntLeft2 from '../asset/image/int-left-2.png';
+
+const GiggleNFTs = [BannerBackground];
 
 const Home = () => {
   return (
     <div className="container">
       <div className="banner">
         <div>
-          <img src={Vector} alt="" />
+          <div>
+            <img src={BannerBackground} alt="" />
+          </div>
+          <div className="content">
+            <h1>Stay Hungry, Stay Foolish.</h1>
+            <button>Wallet connect</button>
+          </div>
+          <div className="quote">
+            <img src="" alt="" />
+          </div>
+          <div className="curve"></div>
         </div>
-        <div className="content">
-          <h1>Stay Hungry, Stay Foolish</h1>
-          <button>Wallet connect</button>
-        </div>
-        <div className="quote">
-          <img src="" alt="" />
-        </div>
-        <div className="curve"></div>
       </div>
       <div className="introduction">
         <div>
-          <img src="" alt="" />
-        </div>
-        <div>
-          <p>
-            Hungry Chickens are a group of people who are curious and foolish. We are curious about everything in the
-            world and willing to learn. But we only choose one thing we love and stick to it.
-          </p>
-          <p>
-            As old saying goes, "We only live once, but if we work it right once is enough". On the way of chasing our
-            dreams, we will surely fight against fate and competitors.
-          </p>
-          <p>Let's fight life together! Fight for delicacy! Fight for dreams!</p>
-        </div>
-        <div className="quote">
-          <img src="" alt="" />
+          <div>
+            <img src={IntLeft1} alt="" />
+            <img src={IntLeft2} alt="" />
+          </div>
+          <div className="content">
+            <p>
+              Hungry Chickens are a group of people who are curious and foolish. We are curious about everything in the
+              world and willing to learn. But we only choose one thing we love and stick to it.
+            </p>
+            <p>
+              As old saying goes, "We only live once, but if we work it right once is enough". On the way of chasing our
+              dreams, we will surely fight against fate and competitors.
+            </p>
+            <p>Let's fight life together! Fight for delicacy! Fight for dreams!</p>
+          </div>
+          <div className="quote">
+            <img src="" alt="" />
+          </div>
         </div>
       </div>
       <div className="roadmap">
