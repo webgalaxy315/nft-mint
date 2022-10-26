@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-scroll';
 
 import './asset/styles/layout.scss';
 
@@ -14,23 +15,63 @@ const Layout = ({ children }: Props) => {
     <>
       <header>
         <div className="header">
-          <input type="checkbox" id="openable" />
+          {/* <input type="checkbox" id="openable" />
           <label className="hamburger" htmlFor="openable">
             <span></span>
-          </label>
+          </label> */}
           <menu>
             <ul className="menu">
               <li>
-                <a href={'/'}>Introduce</a>
+                <Link
+                  activeClass="active"
+                  to="introduction"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  style={{ cursor: 'pointer' }}
+                >
+                  Introduce
+                </Link>
               </li>
               <li>
-                <a href={'/'}>Roadmap</a>
+                <Link
+                  activeClass="active"
+                  to="roadmap"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  style={{ cursor: 'pointer' }}
+                >
+                  Roadmap
+                </Link>
               </li>
               <li>
-                <a href={'/'}>Contact</a>
+                <Link
+                  activeClass="active"
+                  to="contract"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={500}
+                  style={{ cursor: 'pointer' }}
+                >
+                  Contact
+                </Link>
               </li>
               <li>
-                <a href={'/'}>Q&A</a>
+                <Link
+                  activeClass="active"
+                  to="faq"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  style={{ cursor: 'pointer', zIndex: 99 }}
+                >
+                  FAQ
+                </Link>
               </li>
             </ul>
             <div className="logo">

@@ -1,8 +1,35 @@
-
+.container {
+    overflow-x: hidden;
+}
 .banner {
     height: calc(100vh - 100px - 40px);
     padding-left: 50px;
     padding-right: 50px;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        width: 45%;
+        padding-top: 35%;
+        top: -100px;
+        left: 35%;
+        background: url(../../image/ban-cbg.png) no-repeat;
+        background-size: 100% 100%;
+        content: "";
+        z-index: 0;
+    }
+
+    &:before {
+        position: absolute;
+        width: 46%;
+        padding-top: 25%;
+        bottom: -300px;
+        left: 30%;
+        background: url(../../image/int-title.png) no-repeat;
+        background-size: 100% 100%;
+        content: "";
+        z-index: 1;
+    }
 
     > div {
         position: relative;
@@ -12,24 +39,40 @@
         height: 100%;
 
         > div:first-child {
+            display: flex;
+            align-items: flex-end;
             height: 100%;
-            width: 55%;
+            width: 58%;
+            z-index: -1;
         }
 
         .content {
             position: absolute;
-            bottom: 10px;
+            bottom: 15px;
             right: 0;
             width: 50%;
+            height: 65%;
             background: url(../../image/banner-cbg.png) no-repeat;
             background-size: cover;
-            padding: 100px 50px 50px;
+            padding: 175px 60px 100px;
             text-align: center;
 
-            h1 {
-                font-size: 2.9em;
+            &::after {
+                position: absolute;
+                width: 30%;
+                padding-top: 30%;
+                bottom: -200px;
+                right: -2%;
+                background: url(../../image/int-curve.png) no-repeat;
+                background-size: 100% 100%;
+                content: "";
+                z-index: 0;
             }
             
+            span {
+                font-size: 4em;
+            }
+
             button {
                 padding: 15px 30px;
                 margin-left: 70px;
@@ -43,20 +86,62 @@
 }
 
 .introduction {
+    position: relative;
+    padding-top: 50px;
+    width: 100vw;
+
+    &:after, &:before {
+        position: absolute;
+        width: 40%;
+        padding-top: 43%;
+        background: url(../../image/bg-ball.png) no-repeat;
+        background-size: 100% 100%;
+        content: "";
+        z-index: -1;
+    }
+
+    &:before {
+        top: 0;
+        left: 0;
+        transform: translate(0, 70px);
+    }
+
+    &:after {
+        bottom: 0;
+        right: 0;
+        transform: translate(0, 0);
+    }
 
     > div {
         display: flex;
+        position: relative;
         width: 80%;
         margin: 0 auto;
 
         > div:first-child {
             display: flex;
-            width: 50%;
+            width: 45%;
             height: 100%;
             padding: 100px 0;
 
-            img:last-child {
-                margin-left: -70%;
+            &:after {
+                position: absolute;
+                width: 27%;
+                padding-top: 27%;
+                bottom: 0;
+                left: 0;
+                transform: translate(-55%, -180px);
+                background: url(../../image/int-giggle.png) no-repeat;
+                background-size: 100% 100%;
+                content: "";
+            }
+
+            > img {
+                width: 80%;
+
+                &:last-child {
+                    margin-left: -60%;
+                }
             }
         }
 
@@ -65,12 +150,341 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 50%;
+            width: 58%;
+            margin-left: -3%;
             padding: 100px 100px;
             background: url(../../image/int-cbg.png) no-repeat;
             background-size: 100% 100%;
             text-align: center;
             text-transform: capitalize;
+
+            &:after {
+                position: absolute;
+                width: 23%;
+                padding-top: 23%;
+                bottom: 0;
+                right: 0;
+                transform: translate(45%, 120px);
+                background: url(../../image/int-blue.png) no-repeat;
+                background-size: 100% 100%;
+                content: "";
+            }
         }
+    }
+}
+
+.roadmap {
+    width: 100vw;
+    position: relative;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 250px;
+
+    &:before, &:after {
+        position: absolute;
+        width: 40%;
+        background: url(../../image/bg-ball.png) no-repeat;
+        background-size: 100% 100%;
+        content: "";
+        z-index: -1;
+    }
+
+    &::before {
+        padding-top: 30%;
+        top: 0;
+        left: 20%;
+        z-index: 0;
+    }
+
+    &::after {
+        padding-top: 45%;
+        bottom: -15%;
+        left: 20%;
+        z-index: 0;
+    }
+
+    > div {
+        display: flex;
+        align-items: flex-start;
+
+        > div:first-child {
+            width: 50%;
+            padding: 2% 0% 0 2%;
+            background: url(../../image/rm-rect.png) no-repeat;
+            background-size: 100% 100%;
+
+            &:after {
+                position: absolute;
+                width: 35%;
+                padding-top: 40%;
+                top: 0;
+                left: 0;
+                transform: translate(-32%, -100px);
+                background: url(../../image/rm-star.png) no-repeat;
+                background-size: 100% 100%;
+                content: "";
+                z-index: 1;
+            }
+
+            &:before {
+                position: absolute;
+                width: 15%;
+                padding-top: 15%;
+                bottom: 0;
+                left: 0;
+                transform: translate(25%, 20%);
+                background: url(../../image/rm-curve.png) no-repeat;
+                background-size: 100% 100%;
+                content: "";
+                z-index: 2;
+            }
+
+            img {
+                position: relative;
+                width: 200%;
+                z-index: 1;
+            }
+        }
+
+        .content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 200px 150px;
+            width: 50%;
+            background: url(../../image/rm-cbg.png) no-repeat;
+            background-position: 35% -10%;
+            background-size: 100% 100%;
+            text-align: center;
+            z-index: 1;
+
+            > div {
+                margin-bottom: 1em;
+            }
+
+            h5 {
+                margin: 0;
+                color: #FFC24B;
+            }
+        }
+    }
+}
+
+.contract {
+    position: relative;
+    width: 100vw;
+    padding-left: 50px;
+    margin-bottom: 150px;
+
+    &:after {
+        position: absolute;
+        bottom: -50px;
+        left: 30%;
+        width: 40%;
+        padding-top: 30%;
+        background: url(../../image/bg-ball.png) no-repeat;
+        background-size: 100% 100%;
+        content: "";
+        z-index: 0;
+    }
+
+    &:before {
+        position: absolute;
+        width: 45%;
+        padding-top: 45%;
+        left: 32%;
+        bottom: -560px;
+        background: url(../../image/faq-cloud.png);
+        background-size: 100% 100%;
+        z-index: 3;
+        content: "";
+    }
+
+    > div {
+        display: flex;
+
+        > div:first-child {
+            position: relative;
+            width: 75%;
+            background: url(../../image/cont-rect.png) no-repeat;
+            background-position: center center;
+            background-size: 100% 100%;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 50%;
+                background: url(../../image/vector.png) no-repeat;
+                content: "";
+                z-index: 0;
+            }
+
+            &:after {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 70%;
+                width: 85%;
+                background: url(../../image/ctr-left-1.png) no-repeat;
+                content: "";
+                z-index: 2;
+            }
+        }
+
+        .content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 350px 0 250px;
+            width: 95%;
+            margin-left: -50%;
+            background: url(../../image/ctr-cbg.png) no-repeat;
+            background-position: center center;
+            background-size: 120% 120%;
+            text-align: center;
+            z-index: 1;
+
+            &:after {
+                position: absolute;
+                bottom: 80px;
+                right: 20%;
+                width: 20%;
+                padding-top: 20%;
+                background: url(../../image/int-curve.png) no-repeat;
+                background-size: 100% 100%;
+                content: "";
+                z-index: 0;
+            }
+            
+            h5 {
+                margin: 0;
+            }
+
+            > div {
+                margin-bottom: 1em;
+            }
+        }
+    }
+}
+
+.faq {
+    position: relative;
+    width: 100vw;
+    margin-bottom: 120px;
+
+    &:before, &:after {
+        position: absolute;
+        width: 35%;
+        padding-top: 30%;
+        background: url(../../image/bg-ball.png) no-repeat;
+        background-size: 100% 100%;
+        content: "";
+        z-index: -1;
+    }
+
+    &::before {
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    &::after {
+        bottom: 0%;
+        right: 10%;
+        z-index: -1;
+    }
+
+    > div {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h5 {
+            color : #FFC24B
+        }
+
+        > div:first-child {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            justify-content: center;
+            padding: 200px 200px 250px;
+            margin-left: -3%;
+            align-items: center;
+            background: url(../../image/faq-cbg.png) no-repeat;
+            background-size: 100% 100%;
+            text-align: center;
+            width: 60%;
+        }
+
+        > div:nth-child(2) {
+            position: relative;
+            width: 70%;
+            margin-top: -50%;
+            padding-top: 50%;
+            margin-bottom: 60px;
+            background: url(../../image/vector.png) no-repeat;
+            background-size: 100% 100%;
+            border: 6px solid black;
+            z-index: -1;
+
+            &:before {
+                position: absolute;
+                width: 27%;
+                padding-top: 30%;
+                bottom: -100px;
+                left: -15%;
+                background: url(../../image/faq-green.png);
+                background-size: 100% 100%;
+                content: "";
+            }
+
+            &:after {
+                position: absolute;
+                width: 35%;
+                padding-top: 35%;
+                bottom: 0;
+                right: -20%;
+                background: url(../../image/faq-chicken.png);
+                background-size: 100% 100%;
+                content: "";
+            }
+        }
+    }
+}
+
+.giggles {
+    padding: 50px 0 130px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    background: url(../../image/bg-ball.png);
+    background-size: 350px 300px;
+    gap: 30px;
+    overflow-x: hidden;
+
+    &:after {
+        position: absolute;
+        width: 20%;
+        padding-top: 25%;
+        top: 0;
+        transform: translate(180%, -75%);
+        background: url(../../image/ft-giggle.png) no-repeat;
+        background-size: 100% 100%;
+        content: "";
+        z-index: 1;
+    }
+ 
+    > div {
+        min-width: 150px;
+        height: 150px;
     }
 }

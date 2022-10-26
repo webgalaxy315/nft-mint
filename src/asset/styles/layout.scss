@@ -1,13 +1,12 @@
 $header-height: 100px;
-
 $container-x-padding: 50px;
 
 header {
     
-    @media (max-width: 1024px) {
-        position: absolute;
-        z-index: 9999;
-    }
+    // @media (max-width: 1024px) {
+    //     position: absolute;
+    //     z-index: 9999;
+    // }
 }
 
 .header {
@@ -16,12 +15,12 @@ header {
     padding-left: $container-x-padding;
     padding-right: $container-x-padding;
 
-    @media (max-width: 1024px) {
-        flex-direction: column;
-        background: #555D;
-        width: 100vw;
-        min-height: 100vh;
-    }
+    // @media (max-width: 1024px) {
+    //     flex-direction: column;
+    //     background: #555D;
+    //     width: 100vw;
+    //     min-height: 100vh;
+    // }
 
     input#openable {
         width: 0;
@@ -57,35 +56,39 @@ menu {
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: 1024px) {
-        top: -23px;
-        left: -50px;
-        right: -50px;
-        flex-direction: column;
-        justify-content: flex-start;
-        gap: 20px;
-        width: 100%;
-    }
+    // @media (max-width: 1024px) {
+    //     top: -23px;
+    //     left: -50px;
+    //     right: -50px;
+    //     flex-direction: column;
+    //     justify-content: flex-start;
+    //     gap: 20px;
+    //     width: 100%;
+    // }
 }
 
 .menu {
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: 40px;
 
-    @media (max-width: 1024px) {
-        flex-direction: column;
-        gap: 10px;
-        padding-top: 50px;
-        margin-bottom: 50px;
-    }
+    // @media (max-width: 1024px) {
+    //     flex-direction: column;
+    //     gap: 10px;
+    //     padding-top: 50px;
+    //     margin-bottom: 50px;
+    // }
 
     > li {
         display: inline-block;
 
+        Link {
+            cursor: pointer;
+        }
+
         a {
             font-family: Alumni;
-            font-size: 2.9em;
+            font-size: 2em;
             font-style: italic;
             color: #000000;
             letter-spacing: 0.05em;
@@ -98,10 +101,6 @@ menu {
     align-items: center;
     gap: 40px;
 
-    @media (max-width: 1024px) {
-        // display: none;
-    }
-
     > a {
 
         > img {
@@ -112,44 +111,47 @@ menu {
     }
 }
 
-.hamburger {
-    position: absolute;
-    top: 42px;
-    right: 30px;
-    display: none;
-    width: 30px;
-    height: 25px;
-    z-index: 10;
+// .hamburger {
+//     position: absolute;
+//     top: 42px;
+//     right: 30px;
+//     display: none;
+//     width: 30px;
+//     height: 25px;
+//     z-index: 10;
 
-    @media (max-width: 1024px) {
-        display: block;
-    }
+//     @media (max-width: 1024px) {
+//         display: block;
+//     }
 
-    &:before, span, &:after {
-        position: absolute;
-        left: 0;
-        transform: translate(0, -50%);
-        width: 100%;
-        height: 2px;
-        background: #333;
-        transition: all 0.4s ease-in-out;
-        content: "";
-    }
+//     &:before, span, &:after {
+//         position: absolute;
+//         left: 0;
+//         transform: translate(0, -50%);
+//         width: 100%;
+//         height: 2px;
+//         background: #333;
+//         transition: all 0.4s ease-in-out;
+//         content: "";
+//     }
 
-    &:before {
-        top: 0%;
-    }
+//     &:before {
+//         top: 0%;
+//     }
 
-    span {
-        top: 50%;
-    }
+//     span {
+//         top: 50%;
+//     }
 
-    &:after {
-        top: 100%;
-    }
-}
+//     &:after {
+//         top: 100%;
+//     }
+// }
 
 footer {
-    padding-left: 50px;
-    padding-right: 50px;
+    position: relative;
+    height: 70px;
+    margin-top: -50px;
+    margin-right: 50px;
+    background: #ddd;
 }
